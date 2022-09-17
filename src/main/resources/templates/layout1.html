@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<link rel="stylesheet" th:href="@{/css/shop.css}"type="text/css">
+<meta charset="UTF-8">
+
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-
+fit=no">
+
+<title layout:title-pattern="$CONTENT_TITLE - $LAYOUT_TITLE"></title>
+<!-- Bootstrap CSS -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+</head>
+<body>
+
+	<section class="h-top">
+		<div class="container">
+			<div class="row">
+				<div class="col-2 menu">
+					<img th:attr="src=@{/images/logo.png}" width="100px">
+				</div>
+				<div class="col-4 pt-4">
+					<form class="d-flex" role="search">
+						<input class="form-control me-2" type="search"
+							placeholder="Tìm kiếm" aria-label="Search">
+						<button class="btn btn-outline-success" type="submit">Search</button>
+					</form>
+				</div>
+				<div class="col-6 menu">
+					<nav class="navbar navbar-expand-lg ">
+						<div class="container-fluid">
+							<!-- <a class="navbar-brand" href="#">Menu</a> -->
+							<button class="navbar-toggler" type="button"
+								data-bs-toggle="collapse"
+								data-bs-target="#navbarSupportedContent"
+								aria-controls="navbarSupportedContent" aria-expanded="false"
+								aria-label="Toggle navigation">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+							<div class="collapse navbar-collapse" id="navbarSupportedContent">
+								<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+									<li class="nav-item"><a class="nav-link active"
+										aria-current="page" href="index.html">Trang chủ</a></li>
+									<li class="nav-item"><a class="nav-link"
+										href="thanhtoan-tienich.html">Thanh toán và tiện ích</a></li>
+									<li class="nav-item dropdown"><a
+										class="nav-link dropdown-toggle" href="#" role="button"
+										data-bs-toggle="dropdown" aria-expanded="false"> Thông tin
+											mới nhất </a>
+										<ul class="dropdown-menu">
+											<li><a class="dropdown-item" href="tinmoi.html">Tin
+													mới</a></li>
+											<li><hr class="dropdown-divider"></li>
+											<li><a class="dropdown-item" href="khuyenmai.html">Khuyến
+													mãi</a></li>
+											<li><hr class="dropdown-divider"></li>
+											<li><a class="dropdown-item" href="appvagame.html">App
+													và game</a></li>
+											<li><hr class="dropdown-divider"></li>
+											<li><a class="dropdown-item" href="tuvan.html">Đánh
+													giá và tư vấn</a></li>
+
+										</ul></li>
+									<li class="nav-item"><a class="nav-link"
+										href="nonegiohang.html"><i class="bi bi-bag-fill"></i>Giỏ
+											hàng</a></li>
+								</ul>
+
+							</div>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="fs-menu">
+		<div class="f-wrap">
+			<div class="container">
+				<div class="row">
+					<div class="col-2"></div>
+					<div class="col-8">
+						<nav class="navbar navbar-expand-lg bg-dark">
+							<div class="container-fluid">
+								<!-- <a class="navbar-brand" href="#">Navbar</a> -->
+								<button class="navbar-toggler" type="button"
+									data-bs-toggle="collapse"
+									data-bs-target="#navbarSupportedContent"
+									aria-controls="navbarSupportedContent" aria-expanded="false"
+									aria-label="Toggle navigation">
+									<span class="navbar-toggler-icon"></span>
+								</button>
+								<div class="collapse navbar-collapse"
+									id="navbarSupportedContent">
+									<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+										<li class="nav-item dropdown"><a
+											class="nav-link dropdown-toggle text-light" href="#"
+											role="button" data-bs-toggle="dropdown" aria-expanded="false">Điện
+												thoại di động</a>
+											<ul class="dropdown-menu">
+												<li><a class="dropdown-item" href="apple.html">Apple</a></li>
+												<li><hr class="dropdown-divider"></li>
+												<li><a class="dropdown-item" href="samsung.html">Samsung</a></li>
+												<li><hr class="dropdown-divider"></li>
+												<li><a class="dropdown-item" href="nokia.html">Nokia</a></li>
+												<li><hr class="dropdown-divider"></li>
+												<li><a class="dropdown-item" href="xiaomi.html">Xiaomi</a></li>
+												<li><hr class="dropdown-divider"></li>
+												<li><a class="dropdown-item" href="vivo.html">Vivo</a></li>
+												<li><hr class="dropdown-divider"></li>
+												<li><a class="dropdown-item" href="oppo.html">Oppo</a></li>
+												<li><hr class="dropdown-divider"></li>
+												<li><a class="dropdown-item" href="asus.html">Asus</a></li>
+
+											</ul></li>
+										<li class="nav-item dropdown"><a
+											class="nav-link dropdown-toggle text-light" href="#"
+											role="button" data-bs-toggle="dropdown" aria-expanded="false">Laptop</a>
+											<ul class="dropdown-menu">
+												<li><a class="dropdown-item" href="isuslap.html">Isus</a></li>
+												<li><hr class="dropdown-divider"></li>
+												<li><a class="dropdown-item" href="acerlap.html">Acer</a></li>
+												<li><hr class="dropdown-divider"></li>
+												<li><a class="dropdown-item" href="delllap.html">Dell</a></li>
+												<li><hr class="dropdown-divider"></li>
+												<li><a class="dropdown-item" href="lapgaming.html">Gaming</a></li>
+												<li><hr class="dropdown-divider"></li>
+												<li><a class="dropdown-item" href="msilap.html">MSI</a></li>
+												<li><hr class="dropdown-divider"></li>
+												<li><a class="dropdown-item" href="hplap.html">HP</a></li>
+												<li><hr class="dropdown-divider"></li>
+												<li><a class="dropdown-item" href="lenovo.html">Lenovo</a></li>
+											</ul></li>
+										<li class="nav-item dropdown"><a
+											class="nav-link dropdown-toggle text-light" href="#"
+											role="button" data-bs-toggle="dropdown" aria-expanded="false">Apple</a>
+											<ul class="dropdown-menu">
+												<li><a class="dropdown-item" href="apple.html">Iphone</a></li>
+												<li><hr class="dropdown-divider"></li>
+												<li><a class="dropdown-item" href="ipad.html">Ipad</a></li>
+												<li><hr class="dropdown-divider"></li>
+												<!-- <li><hr class="dropdown-divider"></li> -->
+												<li><a class="dropdown-item" href="mac.html">Mac</a></li>
+											</ul></li>
+										<li class="nav-item dropdown"><a
+											class="nav-link dropdown-toggle text-light" href="#"
+											role="button" data-bs-toggle="dropdown" aria-expanded="false">PC-Phụ
+												kiện</a>
+											<ul class="dropdown-menu">
+												<li><a class="dropdown-item" href="loa.html">Loa</a></li>
+												<li><hr class="dropdown-divider"></li>
+												<li><a class="dropdown-item" href="tainghe.html">Tai
+														nghe</a></li>
+												<li><hr class="dropdown-divider"></li>
+												<li><a class="dropdown-item" href="xacpin.html">Xạc
+														dự phòng</a></li>
+												<li><hr class="dropdown-divider"></li>
+												<li><a class="dropdown-item" href="banghe.html">Bàn
+														ghế gaming</a></li>
+											</ul></li>
+										<li class="nav-item dropdown"><a
+											class="nav-link dropdown-toggle text-light" href="#"
+											role="button" data-bs-toggle="dropdown" aria-expanded="false">
+												Khuyến mãi </a>
+											<ul class="dropdown-menu">
+												<li><a class="dropdown-item" href="hotdeal.html">Giảm
+														sâu trong tháng</a></li>
+												<li><hr class="dropdown-divider"></li>
+												<li><a class="dropdown-item" href="khuyenmai.html">Tất
+														cả khuyến mãi</a></li>
+
+											</ul></li>
+
+									</ul>
+
+								</div>
+							</div>
+						</nav>
+					</div>
+					<div class="col-2"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div id='ads-left' class="adv">
+		<div
+			style='margin: 0 0 5px 0; padding: 0; width: 200px; position: fixed; left: 0; top: 0;'>
+			<a href='lienheqc.html' target='_blank'><img border='0'
+				height='665' src='images/bannerqc.png' width='200' /></a>
+		</div>
+	</div>
+	<div id='ads-right'>
+		<div
+			style='margin: 0 0 5px 0; padding: 0; width: 200px; position: fixed; right: 0; top: 0;'>
+			<a href='lienheqc.html' target='_blank'><img border='0'
+				height='665' src='images/bannerqc.png' width='200' /></a>
+		</div>
+	</div>
+	<!-- Content Section -->
+	<section layout:fragment="content">
+		<p>This is filled by the content template.</p>
+	</section>
+	<!-- Footer -->
+	<footer class="text-center text-lg-start bg-white text-muted bottom">
+		<!-- Section: Social media -->
+		<section
+			class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+			<!-- Left -->
+			<div class="me-5 d-none d-lg-block">
+				<span>Đây là trang chủ chính thức của DOG-STORE</span>
+			</div>
+			<!-- Left -->
+
+			<!-- Right -->
+			<div>
+				<a href="" class="me-4 link-grayish"> <i
+					class="fab fa-facebook-f"></i>
+				</a> <a href="" class="me-4 link-grayish"> <i class="fab fa-twitter"></i>
+				</a> <a href="" class="me-4 link-grayish"> <i class="fab fa-google"></i>
+				</a> <a href="" class="me-4 link-grayish"> <i
+					class="fab fa-instagram"></i>
+				</a> <a href="" class="me-4 link-grayish"> <i
+					class="fab fa-linkedin"></i>
+				</a> <a href="" class="me-4 link-grayish"> <i class="fab fa-github"></i>
+				</a>
+			</div>
+			<!-- Right -->
+		</section>
+		<!-- Section: Social media -->
+
+
+		<!-- Section: Links  -->
+		<section class="">
+			<div class="container text-center text-md-start mt-5">
+				<!-- Grid row -->
+				<div class="row mt-3">
+					<!-- Grid column -->
+					<div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+						<!-- Content -->
+						<h6 class="text-uppercase fw-bold mb-4">
+							<i class="bi bi-apple"></i>DOG-STORE
+						</h6>
+						<p>Mọi hành động sử dụng nội dung đăng tải trên Website
+							Dog-Store tại địa chỉ dogstore... phải có sự đồng ý bằng
+							văn bản của Công ty TNHH Dog-Store</p>
+					</div>
+					<!-- Grid column -->
+
+					<!-- Grid column -->
+					<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+						<!-- Links -->
+						<h6 class="text-uppercase fw-bold mb-4">Sản phẩm</h6>
+						<p>
+							<a href="allappleproduct.html" class="text-reset"><i
+								class="bi bi-apple"></i>Apple</a>
+						</p>
+						<p>
+							<a href="samsung.html" class="text-reset"><i
+								class="bi bi-phone"></i>Samsung</a>
+						</p>
+						<p>
+							<a href="lapdeal.html" class="text-reset"><i
+								class="bi bi-laptop"></i>Laptop</a>
+						</p>
+						<p>
+							<a href="linhphukiendeal.html" class="text-reset"><i
+								class="bi bi-headphones"></i>PC-Phụ kiện</a>
+						</p>
+					</div>
+					<!-- Grid column -->
+
+					<!-- Grid column -->
+					<div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+						<!-- Links -->
+						<h6 class="text-uppercase fw-bold mb-4">
+							<i class="bi bi-headset"></i>Hỗ trợ khách hàng
+						</h6>
+						<p>
+							<a href="quydinhchung.html" class="text-reset">Quy định
+								chung</a>
+						</p>
+						<p>
+							<a href="huongdanmuahang.html" class="text-reset">Hướng dẫn
+								mua hàng</a>
+						</p>
+						<p>
+							<a href="thanhtoanvagiaonhan.html" class="text-reset">Thanh
+								toán và giao nhận</a>
+						</p>
+						<p>
+							<a href="caccauhoithuonggap.html" class="text-reset">Các câu
+								hỏi thường gặp</a>
+						</p>
+						<p>
+							<a href="huongdandoitrasp.html" class="text-reset">Hướng
+								dẫn đổi trả sản phẩm</a>
+						</p>
+						<p>
+							<a href="baomatthongtinkh.html" class="text-reset">Bảo mật
+								thông tin khách hàng</a>
+						</p>
+					</div>
+					<!-- Grid column -->
+
+					<!-- Grid column -->
+					<div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+						<!-- Links -->
+						<h6 class="text-uppercase fw-bold mb-4">
+							<i class="bi bi-person-lines-fill"></i>Contact
+						</h6>
+						<p>
+							<i class="fas fa-home me-3 text-grayish"></i> Tân Bình,TP.HCM,VN
+						</p>
+						<p>
+							<i class="fas fa-envelope me-3 text-grayish"></i>
+							haivuong258@gmail.com
+						</p>
+						<p>
+							<i class="fas fa-phone me-3 text-grayish"></i> 0123456789
+						</p>
+						<p>
+							<i class="fas fa-print me-3 text-grayish"></i> 0987654321
+						</p>
+					</div>
+					<!-- Grid column -->
+				</div>
+				<!-- Grid row -->
+			</div>
+		</section>
+		<!-- Section: Links  -->
+
+		<!-- Copyright -->
+		<div class="text-center p-4"
+			style="background-color: rgba(0, 0, 0, 0.025);">
+			© 2021 Copyright: <a class="text-reset fw-bold"
+				href="https://mdbootstrap.com/">dog-store.com</a>
+		</div>
+		<!-- Copyright -->
+	</footer>
+	<!-- Optional Section -->
+	<!-- <th:block layout:fragment="optional" /> -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+</body>
+</html>

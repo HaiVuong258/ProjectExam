@@ -1,0 +1,50 @@
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Employees</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<table border="1">
+		<h2>Employees</h2>
+		<tr>
+			<th>INDEX</th>
+			<th>ODD/EVEN</th>
+			<th>ROLE</th>
+			<th>ID</th>
+			<th>NAME</th>
+			<th>Action</th>
+			<th>DATE</th>
+		</tr>
+
+		<tr th:each="emp,iterStat: ${employeeList}">
+			<td th:text="${iterStat.index+1}"></td> <!-- vi mac dinh no chay bd tu 0 -->
+				
+			<td th:text="${iterStat.odd}?'ODD':'EVEN'"></td>
+			
+			<td>
+				<div th:each="permission: ${emp.permissions}">
+					<div th:switch="${permission.name}">
+						<p th:case="'ADMIN'">Employee is an admin</p>
+						<p th:case="'MANAGER'">Employee is a manager</p>
+					</div>
+				</div>
+			</td>
+			
+			<td th:text="${emp.id}"></td>
+			
+			<td th:text="${emp.name}"></td>
+			
+			<td th:if="${iterStat.odd}">
+				<!-- th:if tức là nếu đúng dk thì nó ms thực hiện những thao tác bên dưới -->
+				<a
+				th:href="@{http://localhost:8080/employees?action=EDIT&(empid=${emp.id})}">EDIT</a>
+			</td>
+			
+			<td th:text ="${#dates.format(emp.dateOfBirth,'dd/MM/yyyy')}"></td>
+		
+		</tr>
+
+	</table>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout}">
+<head>
+<title>User List</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<div class="row">
+			<div class="col-md-6">
+				<h2 class="my-5">Users</h2>
+				<table class="table">
+					<thead>
+						<tr>
+							<th><a
+								th:href="@{/user?(page=${currentPage},sortField='id',sortDir=${reverseSortDir})}">ID</a>
+							</th>
+							<th><a
+								th:href="@{/user?(page=${currentPage},sortField='firstName',sortDir=${reverseSortDir})}">First
+									Name</a></th>
+							<th><a
+								th:href="@{/user?(page=${currentPage},sortField='lastName',sortDir=${reverseSortDir})}">Last
+									Name</a></th>
+							<th><a
+								th:href="@{/user?(page=${currentPage},sortField='email',sortDir=${reverseSortDir})}">Email</a>
+							</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="user: ${users}">
+							<td th:text="${user.id}"></td>
+							<td th:text="${user.firstName}"></td>
+							<td th:text="${user.lastName}"></td>
+							<td th:text="${user.email}"></td>
+							<td><a class="btn btn-primary"
+								th:href="@{/edituser?(userId=${user.id})}" role="button">Edit
+									User</a></td>
+							<td><a class="btn btn-primary"
+								th:href="@{/deleteuser?(userId=${user.id})}" role="button">Delete
+									User</a></td>
+						</tr>
+					</tbody>
+				</table>
+				<nav aria-label="Page navigation example">
+					<ul class="pagination">
+						<li th:if="${currentPage>1}" class="page-item"><a
+							class="page-link" th:href="@{/user?(page=${currentPage-1})}">Previous</a>
+						</li>
+
+						<li th:if="${currentPage<=1}" class="page-item disabled"><a
+							class="page-link" href="#">Previous</a></li>
+							
+							
+						<!-- tra ve tu 1 den tong so trang cu phap i: ${#number.sequence(1,totalPage)} -->
+						
+						
+						<li th:each="i: ${#numbers.sequence(1,totalPage)}"
+							class="page-item"><a class="page-link" th:text=${i}
+							th:href="@{/user?(page=${i},sortField=${sortField},sortDir=${sortDir})}">1</a></li>
+						<!-- <li class="page-item"><a class="page-link"
+							th:href="@{/user?page=2}">2</a></li>
+						<li class="page-item"><a class="page-link"
+							th:href="@{/user?page=3}">3</a></li>
+						<li class="page-item"><a class="page-link"
+							th:href="@{/user?page=4}">4</a></li> -->
+						<li th:if="${currentPage<totalPage}" class="page-item"><a
+							class="page-link" th:href="@{/user?(page=${currentPage+1})}">Next</a></li>
+						<li th:if="${currentPage>=totalPage}" class="page-item disabled"><a
+							class="page-link" href="#">Next</a></li>
+					</ul>
+				</nav>
+				<a class="btn btn-primary" th:href="@{/signup}" role="button">Create
+					User</a>
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>
