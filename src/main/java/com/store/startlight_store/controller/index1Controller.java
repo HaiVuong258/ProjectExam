@@ -9,4 +9,7 @@ public class index1Controller {
 	public String homePage() {
 		return "index1";
 	}
+//	@GetMapping("/store/thanhtoanvatienich"){
+//		return 
+//	}
 }

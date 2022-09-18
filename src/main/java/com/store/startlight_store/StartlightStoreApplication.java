@@ -6,7 +6,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -19,28 +18,27 @@ import com.store.startlight_store.responsitory.EmployeeRepository;
 import com.store.startlight_store.service.UserService;
 
 @SpringBootApplication
-public class StartlightStoreApplication implements CommandLineRunner{
+public class StartlightStoreApplication implements CommandLineRunner {
 
 	@Autowired
 	private Customer customer;
 	@Autowired
 	private EmployeeRepository employeeResponsitory;
-	
+
 	@Autowired
 	private UserService userSer;
-	
+
 	public static void main(String[] args) {
 		SpringApplication.run(StartlightStoreApplication.class, args);
 	}
-	
-@Override
-public void run(String...args) throws Exception
-{
-	System.out.println("--------------Hello--------------");
-	System.out.println("Customer"+customer.getPerson());
-	if(userSer.getByUserName("admin")==null) {
-		userSer.createDefaultAdmin();
-	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		System.out.println("--------------Hello--------------");
+		System.out.println("Customer" + customer.getPerson());
+		if (userSer.getByUserName("admin") == null) {
+			userSer.createDefaultAdmin();
+		}
 //	userSer.createDefaultAdmin();
 //	Employee employee1 = new Employee();
 //	employee1.setName("Nguyen Van A");
@@ -51,7 +49,7 @@ public void run(String...args) throws Exception
 //	{
 //		System.out.println("Employee Name: "+employee.getName());	
 //	}
-	
+
 //	Department dept = new Department();
 //	dept.setName("IT");
 //	
@@ -80,8 +78,7 @@ public void run(String...args) throws Exception
 //	
 //	employeeResponsitory.save(employee3);
 ////	employeeResponsitory.deleteById(1);
-	
-	
-}
+
+	}
 
 }
