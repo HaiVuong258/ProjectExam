@@ -3,7 +3,7 @@
 	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-<link rel="stylesheet" th:href="@{/css/shop.css}" type="text/css">
+<link rel="stylesheet" th:href="@{/css/shop.css}"type="text/css">
 <meta charset="UTF-8">
 
 <meta name="viewport"
@@ -25,9 +25,7 @@ fit=no">
 		<div class="container">
 			<div class="row">
 				<div class="col-2 menu">
-					<a class="navbar-brand" th:href="@{/}"><img
-						th:attr="src=@{/images/logo.png}" width="100px"></a>
-
+					<img th:attr="src=@{/images/logo.png}" width="100px">
 				</div>
 				<div class="col-4 pt-4">
 					<form class="d-flex" role="search">
@@ -50,7 +48,7 @@ fit=no">
 							<div class="collapse navbar-collapse" id="navbarSupportedContent">
 								<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 									<li class="nav-item"><a class="nav-link active"
-										aria-current="page" th:href="@{/}">Trang chủ</a></li>
+										aria-current="page" href="index.html">Trang chủ</a></li>
 									<li class="nav-item"><a class="nav-link"
 										href="thanhtoan-tienich.html">Thanh toán và tiện ích</a></li>
 									<li class="nav-item dropdown"><a
