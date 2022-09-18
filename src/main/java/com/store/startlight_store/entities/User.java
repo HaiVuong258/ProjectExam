@@ -43,9 +43,6 @@ public class User {
 	@Column(name = "IS_ACTIVE", length = 1)
 	private Boolean isActive = false;
 	
-	@ManyToOne(cascade = CascadeType.PERSIST)
-	private Department department;
-	
 	
 	@ManyToMany(cascade = CascadeType.PERSIST,fetch = FetchType.EAGER)
 	private List<Permission> permissions;
@@ -76,12 +73,7 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Department getDepartment() {
-		return department;
-	}
-	public void setDepartment(Department department) {
-		this.department = department;
-	}
+	
 	public List<Permission> getPermission() {
 		return permissions;
 	}

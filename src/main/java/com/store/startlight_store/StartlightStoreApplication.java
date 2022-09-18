@@ -11,10 +11,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.store.startlight_store.entities.Department;
-import com.store.startlight_store.entities.Employee;
 import com.store.startlight_store.entities.Permission;
-import com.store.startlight_store.responsitory.EmployeeRepository;
+
 import com.store.startlight_store.service.UserService;
 
 @SpringBootApplication
@@ -22,9 +20,7 @@ public class StartlightStoreApplication implements CommandLineRunner {
 
 	@Autowired
 	private Customer customer;
-	@Autowired
-	private EmployeeRepository employeeResponsitory;
-
+	
 	@Autowired
 	private UserService userSer;
 

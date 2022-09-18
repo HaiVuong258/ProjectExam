@@ -36,19 +36,13 @@ public class Permission {
 		this.name = name;
 	}
 	
-	@ManyToMany(mappedBy = "permissions")
-	private List<Employee> employees;
+	
 	
 	@ManyToMany(mappedBy = "permissions")
 	private List<User>users;
 
-	public List<Employee> getEmployees() {
-		return employees;
-	}
+	
 
-	public void setEmployees(List<Employee> employees) {
-		this.employees = employees;
-	}
 
 	public List<User> getUsers() {
 		return users;
